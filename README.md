@@ -1,5 +1,6 @@
 # tensorflow-compile-docker
-This repository helps creating a docker container that enables tensorflow compilation
+This repository helps creating a docker container that enables tensorflow compilation using SSE4.1, SSE4.2, and AVX.
+
 To compile tensorflow do:
 
 ```
