@@ -18,7 +18,7 @@ user@d9dd40daf170:/tensorflow$ ./configure
 
 To build a pip package for TensorFlow with CPU-only support:
 ```
-user@d9dd40daf170:/tensorflow$ bazel build -c opt --copt=-mavx --copt=-mavx2 --copt=-mfma --copt=-mfpmath=both --copt=-msse4.2 -k //tensorflow/tools/pip_package:build_pip_package
+user@d9dd40daf170:/tensorflow$ bazel build -c opt --config=mkl --copt=-mavx --copt=-mavx2 --copt=-mfma --copt=-mfpmath=both --copt=-msse4.2 -k //tensorflow/tools/pip_package:build_pip_package
 ```
 Outputs wheel in **/tmp/tensorflow_pkg/**.
 See more information about the compilation on https://www.tensorflow.org/install/install_sources.
