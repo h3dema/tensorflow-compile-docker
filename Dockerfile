@@ -9,12 +9,12 @@
 #
 # saida em: /tmp/tensorflow_pkg/
 
-
 FROM ubuntu:14.04
 
 RUN apt-get -y update && \
     apt-get -y upgrade && \
-    apt-get install -y binutils python3-minimal python3 software-properties-common git
+    apt-get install -y binutils python3-minimal python3 software-properties-common git python3-numpy python3-dev python3-pip python3-wheel && \
+    apt-get -y install curl
 
 # Ubuntu 16.04:
 # RUN apt-get -y install openjdk-8-jdk
@@ -24,8 +24,6 @@ RUN add-apt-repository -y ppa:openjdk-r/ppa && \
     apt-get -y update && \
     apt-get -y install openjdk-8-jdk
 
-RUN apt-get -y install curl
-
 RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | tee -a /etc/apt/sources.list.d/bazel.list && \
     curl https://bazel.build/bazel-release.pub.gpg | apt-key add - && \
     apt-get -y update && \
@@ -34,4 +32,5 @@ RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8
 
 RUN git clone https://github.com/tensorflow/tensorflow.git
 
-RUN apt-get -y install python3-numpy python3-dev python3-pip python3-wheel
+RUN cd /usr/bin/ && \
+    ln -s python3 python
