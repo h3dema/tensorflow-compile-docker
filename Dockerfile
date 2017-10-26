@@ -34,5 +34,5 @@ RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8
 
 RUN git clone https://github.com/tensorflow/tensorflow.git
 
-RUN cd /usr/bin/ && \
-    ln -s python3 python
+#RUN cd /usr/bin/ && \
+#    ln -s python3 python
