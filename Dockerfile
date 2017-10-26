@@ -14,8 +14,9 @@ FROM ubuntu:14.04
 
 RUN apt-get -y update && \
     apt-get -y upgrade && \
-    apt-get install -y binutils python3-minimal python3 software-properties-common git python3-numpy python3-dev python3-pip python3-wheel && \
+    apt-get install -y binutils python3-minimal python3 software-properties-common git python3-numpy python3-dev python3-pip python3-wheel python-pip && \
     apt-get -y install curl
+RUN pip install --upgrade pip
 
 # Ubuntu 16.04:
 # RUN apt-get -y install openjdk-8-jdk
