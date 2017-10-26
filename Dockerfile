@@ -9,8 +9,8 @@
 #
 # saida em: /tmp/tensorflow_pkg/
 
-#FROM ubuntu:16.04
-FROM ubuntu:14.04
+FROM ubuntu:16.04
+#FROM ubuntu:14.04
 
 RUN apt-get -y update && \
     apt-get -y upgrade && \
@@ -19,12 +19,12 @@ RUN apt-get -y update && \
 RUN pip install --upgrade pip
 
 # Ubuntu 16.04:
-# RUN apt-get -y install openjdk-8-jdk
+RUN apt-get -y install openjdk-8-jdk
 
 # Ubuntu 14.04:
-RUN add-apt-repository -y ppa:openjdk-r/ppa && \
-    apt-get -y update && \
-    apt-get -y install openjdk-8-jdk
+#RUN add-apt-repository -y ppa:openjdk-r/ppa && \
+#    apt-get -y update && \
+#    apt-get -y install openjdk-8-jdk
 
 RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | tee -a /etc/apt/sources.list.d/bazel.list && \
     curl https://bazel.build/bazel-release.pub.gpg | apt-key add - && \
