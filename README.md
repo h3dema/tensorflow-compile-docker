@@ -4,7 +4,7 @@ This repository helps creating a docker container that enables tensorflow compil
 To compile tensorflow do:
 
 ```
- docker build -t ts github.com/h3dema/tensorflow-compile-docker
+$ docker build -t ts github.com/h3dema/tensorflow-compile-docker
 $ docker run -it ts
 ```
 
