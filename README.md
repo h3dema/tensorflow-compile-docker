@@ -43,3 +43,7 @@ The following command installs the our pip package.
 ```
 user@d9dd40daf170:/tensorflow$ sudo pip install /tmp/tensorflow_pkg/tensorflow-1.4.0rc0-cp35-cp35m-linux_x86_64.whl
 ```
+
+
+## Other repositories ##
+You will find custom builds of tensorflow in https://github.com/lakshayg/tensorflow-build.
